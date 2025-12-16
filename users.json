@@ -73,5 +73,15 @@
         "name": "nisha",
         "email": "sahnisha1235@gmil.com",
         "password": "$2y$10$xXMbEXtkf9NCqtTsFcEUcemT9uwJ4HOpEo3fUUnN4a3k0\/EHmKFne"
+    },
+    {
+        "name": "manisha",
+        "email": "sahnisha12314@gmil.com",
+        "password": "$2y$10$2F3XeKspL0cZaXMaAGC50uVNwrM9AJhnaRjw9daL\/d8NvaezvP4La"
+    },
+    {
+        "name": "manisha",
+        "email": "sahnisha12315@gmil.com",
+        "password": "$2y$10$iovbnIrpPpgxW51Aq.J6GuxVXGP184i4E6YDnXdqgX3cFwyH6Q\/5O"
     }
 ]

@@ -25,22 +25,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Password validation
-if (empty($_POST["password"])) {
-    $passwordErr = "Password is required";
-} elseif (strlen($_POST["password"]) < 8) {
-    $passwordErr = "Password must be at least 8 characters long";
-} elseif (!preg_match("/[@#$%^&*!]/", $_POST["password"])) {
-    $passwordErr = "Password must contain at least one special character (@#$%^&*!)";
-} else {
-    $password = $_POST["password"];
-}
+    $password = $_POST["password"] ?? ''; // ensure variable is defined
+    if (empty($password)) {
+        $passwordErr = "Password is required";
+    } elseif (strlen($password) < 8) {
+        $passwordErr = "Password must be at least 8 characters long";
+    } elseif (!preg_match("/[@#$%^&*!]/", $password)) {
+        $passwordErr = "Password must contain at least one special character (@#$%^&*!)";
+    }
 
     // Confirm password validation
-if (empty($_POST["confirm_password"])) {
-    $confirmPasswordErr = "Confirm password is required";
-} elseif ($password !== $_POST["confirm_password"]) {
-    $confirmPasswordErr = "Passwords do not match";
-}
+    $confirm_password = $_POST["confirm_password"] ?? ''; // ensure variable is defined
+    if (empty($confirm_password)) {
+        $confirmPasswordErr = "Confirm password is required";
+    } elseif ($password !== $confirm_password) {
+        $confirmPasswordErr = "Passwords do not match";
+    }
 
     // If no errors
     if (empty($nameErr) && empty($emailErr) && empty($passwordErr) && empty($confirmPasswordErr)) {
@@ -95,6 +95,7 @@ if (empty($_POST["confirm_password"])) {
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>
